@@ -5,9 +5,11 @@
 }
 html, body {
   margin: 0;
+  background: var(--black);
 }
 body, button, input, select, textarea {
   font-family: 'Poppins', 'Arial', sans-serif;
+  color: white;
 }
 :root {
   --purple:#5280e2;
@@ -15,7 +17,7 @@ body, button, input, select, textarea {
   --black: #212226;
   --gray: #e0dede;
 
-  --height-calc: 70px;
+  --height-calc: 75px;
 }
 h1 {
   font-size: 44px;
@@ -40,9 +42,6 @@ button {
   padding: 8px 35px;
   font-size: 18px;
 }
-body {
-  background: var(--black);
-}
 header {
   height: calc(100vh - var(--height-calc));
   display: flex;
@@ -52,9 +51,9 @@ header .container img {
   display: none;
 }
 header .container {
-  width: 70%;
+  width: 50%;
   height:fit-content;
-  padding: 0px 100px;
+  padding: 0 100px;
 }
 header .container button {
   margin-top: 40px;
@@ -88,12 +87,12 @@ nav ul a {
   color: var(--green);
 }
 section {
-  height: 1000px;
+  height: 1500px;
   background: violet;
 }
 
 /* RESPONSIVIDADE */
-
+/* small desktops */
 @media (max-width:1000px){
   header .container {
     width: 100%;
@@ -105,6 +104,7 @@ section {
     padding: 0 30px;
   }
 }
+/* tablet */
 @media (max-width:767px){
   header .container img {
     display: inline;
@@ -120,8 +120,23 @@ section {
     font-size: 16px;
   }
 }
+/* celular */
 @media (max-width:480px){
   header .container {
     padding: 0 40px;
+  }
+  nav {
+    padding: 0 15px;
+    width:100%;
+    bottom: 0;
+    position: fixed;
+    top: unset;
+  }
+  nav ul a {
+    font-size:12px;
+  }
+  nav ul a svg {
+    display: block;
+    margin: 0 auto 10px;
   }
 }

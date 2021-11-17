@@ -48,6 +48,9 @@ header {
   display: flex;
   align-items: center;
 }
+header .container img {
+  display: none;
+}
 header .container {
   width: 70%;
   height:fit-content;
@@ -57,27 +60,68 @@ header .container button {
   margin-top: 40px;
 }
 nav {
-  height: var(--height-calc);
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  height: var(--height-calc);
   padding: 0 100px;
   background: var(--black);
   position: sticky;
-  top: 0px;
+  top: 0;
 
 }
 nav img {
   height: 70px;
 }
+nav ul {
+  width: 100%; /* ocupar 100% do espaço que tem */
+  display: flex; /* ficar todas lado a lado */
+  justify-content: space-around; /* espaçamento (margin) entre topicos */
+}
+nav ul a svg {
+  display: none;
+}
 nav ul a {
   font-size: 20px;
-  margin: 30px;
   text-decoration: none;
   color: var(--green);
 }
 section {
   height: 1000px;
   background: violet;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width:1000px){
+  header .container {
+    width: 100%;
+  }
+  nav ul a {
+    font-size: 18px;
+  }
+  nav {
+    padding: 0 30px;
+  }
+}
+@media (max-width:767px){
+  header .container img {
+    display: inline;
+    margin-bottom: 70px;
+  }
+  nav img {
+    display: none;
+  }
+  nav ul {
+    padding: 0;
+  }
+  nav ul a {
+    font-size: 16px;
+  }
+}
+@media (max-width:480px){
+  header .container {
+    padding: 0 40px;
+  }
 }
